@@ -51,9 +51,9 @@
 
     /* ===== NAV ===== */
     .main-nav { display:flex; justify-content:center; flex-wrap:wrap; border-top:1px solid rgba(207,169,74,0.2); }
-    .nav-tab { background:none; border:none; color:rgba(255,255,255,0.6); font-family:'Inter',sans-serif; font-size:0.72rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; padding:13px 16px; cursor:pointer; position:relative; transition:color var(--transition); white-space:nowrap; }
+    .nav-tab { background:none; border:none; color:rgba(255,255,255,0.6); font-family:'Inter',sans-serif; font-size:0.72rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; padding:13px 16px; cursor:pointer; position:relative; transition:color var(--transition), transform var(--transition); white-space:nowrap; }
     .nav-tab::after { content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%) scaleX(0); width:80%; height:2px; background:var(--gold); border-radius:2px 2px 0 0; transition:transform var(--transition); }
-    .nav-tab:hover { color:var(--gold-light); }
+    .nav-tab:hover { color:var(--gold); transform:scale(1.09); }
     .nav-tab.active { color:var(--gold); }
     .nav-tab.active::after { transform:translateX(-50%) scaleX(1); }
 
@@ -87,6 +87,14 @@
     .btn-primary:hover { transform:translateY(-2px); box-shadow:0 14px 50px rgba(207,169,74,0.42); }
     .btn-outline { background:transparent; color:rgba(255,255,255,0.85); font-weight:500; font-size:0.85rem; padding:13px 30px; border-radius:50px; border:1px solid rgba(255,255,255,0.28); cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:all var(--transition); }
     .btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+    /* Subtle hover scale for content links */
+    .footer-link { transition:color var(--transition), transform var(--transition); }
+    .footer-link:hover { color:var(--gold); transform:scale(1.04); }
+    .contact-item .ci-text a { transition:color var(--transition), transform var(--transition); display:inline-block; }
+    .contact-item .ci-text a:hover { transform:scale(1.03); }
+    .legal-section a { transition:color var(--transition), transform var(--transition); display:inline-block; }
+    .legal-section a:hover { transform:scale(1.03); }
+
     .btn-download { background:linear-gradient(135deg,#2a5298,#1e3c72); color:#fff; font-weight:700; font-size:0.85rem; padding:15px 34px; border-radius:50px; border:none; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px; box-shadow:0 8px 30px rgba(42,82,152,0.35); transition:transform var(--transition); }
     .btn-download:hover { transform:translateY(-2px); }
 
@@ -326,8 +334,8 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
-    <!-- Logo watermark coin bas-droit -->
-    <img src="image 6.png" class="hero-watermark" alt=""/>
+    <!-- Filigrane page d'accueil -->
+    <img src="image 13.jpg" class="hero-watermark" alt=""/>
     <div class="hero-content">
       <div class="hero-badge" data-aos="fade-down">
         <span class="brain-pulse">🧠</span> Certification La Fabrique à Neurones
@@ -337,9 +345,9 @@
         J'aide les dirigeants de TPE/PME en Guadeloupe à réduire les tensions d'équipe et l'absentéisme grâce à des ateliers cognitifs basés sur les neurosciences — la seule méthode locale validée scientifiquement.
       </p>
       <div class="hero-stats" data-aos="fade-up" data-aos-delay="180">
-        <div class="hero-stat"><div class="num">91%</div><div class="label">des actifs jugent la QVCT cruciale</div></div>
-        <div class="hero-stat"><div class="num">4 059€</div><div class="label">coût moyen d'un absent par an</div></div>
-        <div class="hero-stat"><div class="num">5×</div><div class="label">ROI de l'investissement QVCT</div></div>
+        <div class="hero-stat"><div class="num" data-count="91" data-suffix="%">0%</div><div class="label">des actifs jugent la QVCT cruciale</div></div>
+        <div class="hero-stat"><div class="num" data-count="4059" data-suffix="€" data-format="space">0€</div><div class="label">coût moyen d'un absent par an</div></div>
+        <div class="hero-stat"><div class="num" data-count="5" data-suffix="×">0×</div><div class="label">ROI de l'investissement QVCT</div></div>
       </div>
       <div class="btn-group" data-aos="fade-up" data-aos-delay="260">
         <a href="https://calendly.com/guehinadje-ivoryconsulting/audit" target="_blank" rel="noopener" class="btn-primary">
@@ -391,8 +399,8 @@
           </div>
         </div>
         <div data-aos="fade-left">
-          <img src="image 3.jpeg" alt="Nadjé GUEHI – Atelier Ivory Consulting"
-               style="width:100%; height:420px; object-fit:cover; object-position:center 15%; border-radius:20px; box-shadow:0 16px 50px rgba(0,0,0,0.13);"/>
+          <img src="image 14.jpg" alt="Nadjé GUEHI – Atelier Ivory Consulting"
+               style="width:100%; height:420px; object-fit:cover; object-position:center 20%; border-radius:20px; box-shadow:0 16px 50px rgba(0,0,0,0.13);"/>
         </div>
       </div>
     </div>
@@ -455,7 +463,7 @@
       <div class="about-grid">
         <div data-aos="fade-right">
           <div class="about-img-wrap">
-            <img src="image 1.PNG"
+            <img src="image 1.jpeg"
                  alt="Nadjé GUEHI – Fondateur Ivory Consulting"
                  style="object-position:center top;"/>
             <div class="about-img-badge">
@@ -758,11 +766,11 @@
           <div class="stars">★★★★★</div>
           <p class="body">« Nadjé est intervenu dans notre espace avec un atelier de 2h sur la communication et la gestion du stress en situation de prestation. Toute l'équipe a compris pourquoi les tensions montaient lors des périodes chargées. Trois mois après : zéro conflit, une cohésion retrouvée, et nos clientes le ressentent. C'est concret, immédiat, et ça marche vraiment. »</p>
           <div class="testi-author">
-            <img class="testi-logo" src="image 8.png" alt="Veg'âme Anya"
+            <img class="testi-logo" src="image 8.jpeg" alt="Veg'âme Anya"
                  style="object-fit:contain; background:#3d0c5e; padding:2px;"/>
             <div class="testi-info">
-              <div class="name" style="color:var(--gold);">Amélie</div>
-              <div class="company" style="color:rgba(255,255,255,0.5);">Veg'âme Anya — Art-thérapie · Cuisine végane · Coaching · Art de vivre · Mode (Guadeloupe)</div>
+              <div class="name" style="color:var(--gold);">Amélie Shakti</div>
+              <div class="company" style="color:rgba(255,255,255,0.5);">Fondatrice · Veg'âme Anya — Art-thérapie · Cuisine végane · Coaching · Art de vivre · Mode (Guadeloupe)</div>
             </div>
           </div>
         </div>
@@ -773,7 +781,7 @@
           <div class="stars">★★★★★</div>
           <p class="body">« En tant que cabinet de conseil, nous avions du mal à maintenir la cohésion en période de forte charge. Nadjé a apporté une lecture neuroscientifique de nos dysfonctionnements que je n'aurais jamais eu seul. Le programme Cerveau &amp; Management a transformé notre façon de collaborer. »</p>
           <div class="testi-author">
-            <img class="testi-avatar" src="image 7.png" alt="Gagny Diarra – Xalisi Consulting"
+            <img class="testi-avatar" src="image 7.jpeg" alt="Gagny Diarra – Xalisi Consulting"
                  style="object-position:center top;"/>
             <div class="testi-info">
               <div class="name">Gagny Diarra</div>
@@ -1087,8 +1095,35 @@
   function refuseCookies()  { document.getElementById('cookie-banner').style.display='none'; localStorage.setItem('ic_cookies','refused'); }
   if (localStorage.getItem('ic_cookies')) document.getElementById('cookie-banner').style.display='none';
 
+  /* ===== COMPTEURS ANIMÉS ===== */
+  function animateCounters() {
+    document.querySelectorAll('.num[data-count]').forEach(el => {
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const format = el.dataset.format;
+      const duration = 1800;
+      const step = 16;
+      const steps = duration / step;
+      let current = 0;
+      const increment = target / steps;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        const val = Math.floor(current);
+        const formatted = format === 'space'
+          ? val.toLocaleString('fr-FR').replace(/\u202f/g, '\u00a0')
+          : val;
+        el.textContent = formatted + suffix;
+      }, step);
+    });
+  }
+
   /* Init */
   showPage('accueil');
+  setTimeout(animateCounters, 600);
 </script>
 </body>
 </html>
